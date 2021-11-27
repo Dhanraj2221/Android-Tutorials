@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    apply plugins: "com.apollographql.android"
 }
 
 android {
@@ -40,4 +41,16 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //Graphql cashes
+    compileOnly 'org.jetbrains:annotations:13.0'
+    testCompileOnly 'org.jetbrains:annotations:13.0'
+
+
+    implementation "com.apollographql.apollo:apollo-runtime:2.4.6"
+    implementation "com.apollographql.apollo:apollo-api:2.4.6"
+    implementation "com.apollographql.apollo:apollo-coroutines-support:2.4.6"
+    implementation "com.apollographql.apollo:apollo-normalized-cache-sqlite:2.4.6"
 }
+// … other apply statements, apollo needs to be last
+//apply plugin: 'com.apollographql.android'/
