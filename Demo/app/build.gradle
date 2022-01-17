@@ -1,19 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    apply plugins: "com.apollographql.android"
-}
+//    id ("com.apollographql.apollo").version("2.4.6")
 
 android {
     compileSdk 31
-
+    }
     defaultConfig {
         applicationId "com.example.demo"
         minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -31,6 +29,9 @@ android {
         jvmTarget = '1.8'
     }
 }
+//plugins {
+//    id("com.apollographql.apollo").version("x.y.z")
+//}
 
 dependencies {
 
@@ -42,10 +43,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+
     //Graphql cashes
     compileOnly 'org.jetbrains:annotations:13.0'
     testCompileOnly 'org.jetbrains:annotations:13.0'
-
 
     implementation "com.apollographql.apollo:apollo-runtime:2.4.6"
     implementation "com.apollographql.apollo:apollo-api:2.4.6"
@@ -53,4 +54,4 @@ dependencies {
     implementation "com.apollographql.apollo:apollo-normalized-cache-sqlite:2.4.6"
 }
 // … other apply statements, apollo needs to be last
-//apply plugin: 'com.apollographql.android'/
+//apply plugin: 'com.apollographql.android'
